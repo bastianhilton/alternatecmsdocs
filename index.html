@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#welcome-to-alternate-cms-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Introduction
             
           </span>
         </div>
@@ -186,6 +186,98 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Introduction
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#want-a-quickstart" class="md-nav__link">
+    Want a quickstart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternate-cms-folder-layout" class="md-nav__link">
+    Alternate CMS Folder layout
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -212,15 +304,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#want-a-quickstart" class="md-nav__link">
+    Want a quickstart
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#alternate-cms-folder-layout" class="md-nav__link">
+    Alternate CMS Folder layout
   </a>
   
 </li>
@@ -238,20 +330,53 @@
               
                 
                 
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="welcome-to-alternate-cms-documentation">Welcome to Alternate CMS documentation</h1>
+<p>This documentation is to serve as the knowledgebase for AlternateCMS and officially supported features, setup, deployment, and customazation of your Alternate application. </p>
+<h2 id="want-a-quickstart">Want a quickstart</h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>Learn more about the features</code> - Check out Alternate features in full <a href="https://www.alternatecms.com/features">here</a>.</li>
+<li><code>Quick Start Guide</code> - Get started quick with our quick start guide <a href="https://docs.alternatecms.com/quickstart">here</a>.</li>
+<li><code>Deployment</code> - <a href="https://docs.alternatecms.com/deployment">Deploy your application</a> to various services or even on your own server.</li>
+<li><code>Resources</code> - Developer resources are the best way to get started and be successfull with Alternate CMS. Check some out <a href="https://docs.alternatecms.com/resources">here</a>.</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h2 id="alternate-cms-folder-layout">Alternate CMS Folder layout</h2>
+<pre><code>.git    # This folder holds the details of our github public repository (not apart of the overall application).
+
+env # Once you performed virtualenv env in your terminal as mentioned here https://docs.alternatecms.com/quickstart you will see the env folder which holds your application's apps, server details, and other python related tools to get the application to start.
+
+media # A folder to hold our media based files such as images, audio, videos, etc.
+nginx # This folder is to hold our nginx details, which is related to our docker support
+shop/ # holds our application's details including settings.py folder
+    _pycache_  # Our cache folder.
+    templates/       # The template folder and files where our frontend and backend templates are supported.
+
+    _init_.py # Important file that is blank but is supported by Django applications to run along with the manage.py file to build our application.
+
+    asgi.py and wsgi.py # These files tells our server how to run our application.
+    models.py # This is a file that directly imports certain models into our database, it is also influencial file with Graphql.
+
+    mutations.py, schema.py # These files are how our application supports Graphql and contains queries, mutations, and schema details.
+
+    settings.py # This is one of the most important files in Django applications. It contains all the details about our applications, services, and other important information to keep our application running.
+
+    urls.py # Important file that allows our application know how to route certain apps and services to the admin area.
+
+.gitignore # This file holds content of what to ignore when pushing changes to github
+db.sqlite3 # This is our sqlite database, this is only important if you are using sqlite instead of the default Postgresql database.
+
+DockerFile # This file contains details needed to launch our application in docker, see the deployment section
+
+manage.py # One of the files that our system needs to run. It contains details and commands to launch our application and perform several things such as creating a administrator user, migrating our database, and more.
+
+package.json # Useful file for javascript based plugins and apps.
+package-lock.json # File is important for locking javascript plugins and apps to a certain version number.
+
+project.db # Holds details of our database
+README.md # This appears in the official github repository of our application. It's only function is to explain about our application to those who are visiting our application (can be removed)
+
+requirements.txt # An important file that holds all of our apps in one place with pinned version numbers. By running pip install -r requirements.txt command, we can install all of our apps in one go.
+
+run.py # Command file that allows our application to run on servers.
 </code></pre>
                 
               
@@ -268,6 +393,26 @@ docs/
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Quick Start
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
