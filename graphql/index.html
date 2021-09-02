@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.alternatecms.com/deployment/">
+        <link rel="canonical" href="https://docs.alternatecms.com/graphql/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>Deployment - Alternate CMS Docs</title>
+        <title>Graphql - Alternate CMS Docs</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alternate-cms-can-be-deployed-anywhere-python-is-supported" class="md-skip">
+        <a href="#graphql-support" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              Graphql
             
           </span>
         </div>
@@ -222,6 +222,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -233,25 +248,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Graphql
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Deployment
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../graphql/" class="md-nav__link">
         Graphql
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-alternatecms-provides-graphql" class="md-nav__link">
+    How AlternateCMS provides Graphql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    FAQS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -290,6 +327,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-alternatecms-provides-graphql" class="md-nav__link">
+    How AlternateCMS provides Graphql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    FAQS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -301,38 +360,32 @@
               
                 
                 
-                <h1 id="alternate-cms-can-be-deployed-anywhere-python-is-supported">Alternate CMS can be deployed anywhere Python is supported</h1>
-<p>Because Alternate CMS is a colleciton of Django based apps working together. It can be deployed anywhere that supports Python (and python framework Django). It also supports all the same web server and deployment tools that support Django and Python, making it easier to deployed.</p>
-<h1 id="docker-support">Docker support</h1>
-<p>Because of its flexibility, Alternate has built in Docker support and to get started you have to download docker for your operating system.</p>
-<p>For windows and Mac, download Docker Desktop <a href="https://www.docker.com/get-started">here</a></p>
-<p>For Linux, you will have to install docker following these <a href="https://docs.docker.com/engine/install/">guides</a></p>
-<p>Once docker is setup on your machine, now just run two commands to build and deploy your system.</p>
-<ul>
-<li><code>docker-compose build</code> # Build Alternate CMS docker image to prepare it for Docker deployment</li>
-<li><code>docker-compose up -d</code> # Deploys Alternate CMS to Docker (usually takes about 10 minutes depending on your setup and system.)</li>
-</ul>
-<p>Now access your application at:</p>
-<p>localhost:8000 (Front-end)</p>
-<p>localhost:8000/admin (Back-end)</p>
-<h1 id="deploy-using-pm2">Deploy using PM2</h1>
-<p>The following process can be completed on Windows, Mac, and Linux</p>
-<p>You can install pm2 through npm.</p>
-<ul>
-<li>Open your terminal</li>
-<li>Make sure you have Nodejs installed by typing node -v and also npm -v</li>
-<li>If both are installed then install PM2 with the following commands:</li>
-</ul>
-<p>$ npm install pm2@latest -g</p>
-<h1 id="or">or</h1>
-<p>$ yarn global add pm2</p>
-<ul>
-<li>If node isn't install, install it here: https://nodejs.org/en/</li>
-</ul>
-<p>Once PM2 is installed, to launch AlternateCMS run these commands:</p>
-<p>pm2 start ecosystem.config.js</p>
-<p>now your process is running even if you close your terminal</p>
-<p>Visit http://localhost:8000 for your frontend and http://localhost:8000/admin/ for your dashboard.</p>
+                <h1 id="graphql-support">Graphql Support</h1>
+<p>GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.</p>
+<h2 id="how-alternatecms-provides-graphql">How AlternateCMS provides Graphql</h2>
+<p>We use the Graphql-Mesh service by including a .meshrc.yaml file in the root directory of your application. From here you can simply follow the steps below to access your graphql instance.</p>
+<p>In your terminal, access the root directory of your installation of AlternateCMS.</p>
+<p>Enter yarn mesh dev and your graphql instance will be available on http://localhost:4000</p>
+<h2 id="faqs">FAQS</h2>
+<p>What solution does AlternateCMS use for Graphql?</p>
+<p>We decided to outsource our graphql functionality to the powerful solution Graphql-Mesh. It has proven a viable soltuion because it queries the database, allowing anything added to the AlternateCMS to be immediately turned into a Graphql schema. This solution is faster and more scalable then doing it by hand using other solutions.</p>
+<p>If I wanted to use my own graphql solution similar to Graphql-Mesh could I?</p>
+<p>Yes, because Graphql-Mesh is just a plugin to our system. It can be removed or simply not activated. Either way, it won't interfere with any other graphql solutions.</p>
+<p>Other than Graphql-Mesh, are there other types of solutions similar to it?</p>
+<p>Yes you have Hasura and Postgraphile which are just a two of many solutions that can query your database directly.</p>
+<p>Why use Graphql-Mesh instead of Ariadne, Graphene, or another python based solution?</p>
+<p>Building graphql over an entire application the size of AlternateCMS is no easy task. Its not the most scalable way of doing it and you can run into many issues as the application grows. So enters Graphql-Mesh, a powerful and scalable solution that allows us to turn our entire database into graphql queries, mutations, and subscriptions.</p>
+<p>How to turn off Graphql in AlternateCMS?</p>
+<p>Because graphql is provided by Graphql-Mesh in the form of a plugin that sits outside of the actual cms. Graphql can be turned off by simply not running it or removing the Graphql-Mesh files altogether.</p>
+<p>What features comes with graphql in AlternateCMS?</p>
+<p>You get support for subscriptions, mutations, and queries like most graphql setups but without coding. Its a graphql layer that sits on top of your database.</p>
+<p>To find out the features particularly to graphql-mesh, visit: https://www.graphql-mesh.com/</p>
+<p>What databases are supported by Graphql-Mesh?</p>
+<p>Luckily all the databases supported by AlternateCMS and Django are supported. This includes Mysql, SQLite, and Postgres. Other sources are available here: https://www.graphql-mesh.com/docs/getting-started/basic-example under Source Handlers.</p>
+<p>Where can i go to find out more about Graphql?</p>
+<p>Visit the official graphql website: https://graphql.org/</p>
+<p>I have more questions about Graphql, where can I go?</p>
+<p>Visit the official graphql website: https://graphql.org/faq/</p>
                 
               
               
@@ -341,7 +394,7 @@
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://docs.alternatecms.com/deployment/",this.page.identifier="deployment/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//alternatecms.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://docs.alternatecms.com/graphql/",this.page.identifier="graphql/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//alternatecms.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -356,7 +409,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start" rel="prev">
+        <a href="../deployment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deployment" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -365,20 +418,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Quick Start
+              Deployment
             </div>
           </div>
         </a>
       
       
         
-        <a href="../graphql/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphql" rel="next">
+        <a href="../rest/" class="md-footer__link md-footer__link--next" aria-label="Next: Using Rest APIs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Graphql
+              Using Rest APIs
             </div>
           </div>
           <div class="md-footer__button md-icon">
